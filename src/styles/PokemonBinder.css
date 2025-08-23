@@ -1,0 +1,781 @@
+/* Binder Cover Styles */
+.binder-cover {
+  width: 800px;
+  height: 1000px;
+  cursor: pointer;
+  transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.binder-cover.open {
+  transform: rotateY(-180deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cover-front {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 3px solid #333;
+  overflow: hidden;
+}
+
+/* Pokeball Design */
+.pokeball-design {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokeball-top {
+  flex: 1;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.tcgames-logo {
+  text-align: center;
+  color: white;
+}
+
+.logo-bars {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.bar {
+  width: 4px;
+  height: 30px;
+  background: white;
+}
+
+.logo-text {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.logo-subtitle {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+}
+
+.pokeball-middle {
+  height: 12px;
+  background: #1a1a1a;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 3px solid #333;
+  border-bottom: 3px solid #333;
+}
+
+.pokeball-button {
+  width: 75px;
+  height: 75px;
+  background: radial-gradient(circle, #333 0%, #1a1a1a 70%);
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #555;
+}
+
+.button-inner {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #666 0%, #333 100%);
+  border-radius: 50%;
+  border: 3px solid #444;
+}
+
+.pokeball-bottom {
+  flex: 1;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.pokemon-elements {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.element {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: relative;
+  border: 4px solid #333;
+}
+
+.element.grass {
+  background: radial-gradient(circle, #22c55e 0%, #16a34a 100%);
+}
+
+.element.water {
+  background: radial-gradient(circle, #06b6d4 0%, #0891b2 100%);
+}
+
+.element.fire {
+  background: radial-gradient(circle, #f97316 0%, #ea580c 100%);
+}
+
+.element.electric {
+  background: radial-gradient(circle, #fbbf24 0%, #f59e0b 100%);
+}
+
+/* Click Indicator */
+.click-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  animation: pulse 2s infinite;
+}
+
+.click-indicator svg {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Cover Page Content */
+.cover-page-content {
+  height: calc(100% - 100px);
+  position: relative;
+  z-index: 1;
+}
+
+.start-collection {
+  margin-top: 20px;
+}
+
+.start-button {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(34, 197, 94, 0.3);
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(34, 197, 94, 0.4);
+}
+
+.start-button .arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.start-button:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Binder Pages */
+.binder-pages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px;
+  height: 1000px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform: scale(0.8) rotateY(180deg);
+}
+
+.binder-pages.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1) rotateY(0deg);
+}
+
+.page-background {
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  border-radius: 18px;
+  position: relative;
+  padding: 60px;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 3px solid #333;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+  cursor: grab;
+}
+
+.page-background:active {
+  cursor: grabbing;
+}
+
+.page-background.turning {
+  animation: pageFlip 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes pageFlip {
+  0% {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(1200px) rotateY(-90deg) scale(0.8);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+}
+
+.page-texture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.03) 3px,
+      rgba(255, 255, 255, 0.03) 6px
+    );
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+/* Page Turn Areas */
+.page-turn-area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 5;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-turn-area.left {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.page-turn-area.right {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.page-turn-area:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.page-turn-area.left:hover {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.page-turn-area.right:hover {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+  height: calc(100% - 100px);
+  position: relative;
+  z-index: 1;
+}
+
+.card-slot {
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 3px solid #444;
+  border-radius: 12px;
+  padding: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 
+    inset 0 3px 6px rgba(0, 0, 0, 0.3),
+    0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-slot:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    inset 0 3px 6px rgba(0, 0, 0, 0.3),
+    0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card-slot.empty {
+  opacity: 0.3;
+}
+
+.card-sleeve {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 2px;
+  position: relative;
+  backdrop-filter: blur(1px);
+}
+
+.pokemon-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.02);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.empty-slot {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #555;
+}
+
+.empty-slot-text {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Back Cover Content */
+.back-cover-content {
+  height: calc(100% - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.back-cover-design {
+  text-align: center;
+  color: white;
+  max-width: 500px;
+}
+
+.collection-stats {
+  margin-bottom: 60px;
+}
+
+.collection-stats h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #fbbf24;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.back-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.mini-pokeball {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  border: 4px solid #333;
+}
+
+.mini-pokeball-top {
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  border-radius: 80px 80px 0 0;
+}
+
+.mini-pokeball-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #555;
+}
+
+.mini-pokeball-button {
+  width: 12px;
+  height: 12px;
+  background: #666;
+  border-radius: 50%;
+}
+
+.mini-pokeball-bottom {
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 0 0 80px 80px;
+  position: absolute;
+  bottom: 0;
+}
+
+.collection-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.collection-subtitle {
+  font-size: 16px;
+  color: #cbd5e1;
+  margin: 0;
+  font-style: italic;
+}
+
+/* External Page Indicator */
+.external-page-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px 30px;
+  color: white;
+}
+
+.page-dots {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.page-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.page-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
+}
+
+.page-dot.active {
+  transform: scale(1.3);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+}
+
+.page-dot.cover-dot {
+  background: rgba(34, 197, 94, 0.7);
+  border: 2px solid #22c55e;
+}
+
+.page-dot.cover-dot.active {
+  background: #22c55e;
+  border-color: #16a34a;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.5);
+}
+
+.page-dot.card-page-dot {
+  background: rgba(251, 191, 36, 0.7);
+  border: 2px solid #fbbf24;
+}
+
+.page-dot.card-page-dot.active {
+  background: #fbbf24;
+  border-color: #f59e0b;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+}
+
+.page-dot.back-cover-dot {
+  background: rgba(220, 38, 38, 0.7);
+  border: 2px solid #dc2626;
+}
+
+.page-dot.back-cover-dot.active {
+  background: #dc2626;
+  border-color: #b91c1c;
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.5);
+}
+
+.page-info {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.cover-text {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.back-cover-text {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.page-instructions {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Binding Holes */
+.binding-holes {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+
+.hole {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #000;
+  border: 3px solid #333;
+  box-shadow: 
+    inset 0 3px 6px rgba(0, 0, 0, 0.5),
+    0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .binder-cover {
+    width: 600px;
+    height: 750px;
+  }
+  
+  .binder-pages {
+    width: 600px;
+    height: 750px;
+  }
+  
+  .page-background {
+    padding: 45px;
+  }
+  
+  .card-grid {
+    gap: 6px;
+  }
+  
+  .logo-text {
+    font-size: 28px;
+  }
+  
+  .logo-subtitle {
+    font-size: 12px;
+  }
+  
+  .collection-stats h2 {
+    font-size: 24px;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+  }
+  
+  .collection-title {
+    font-size: 20px;
+  }
+  
+  .external-page-indicator {
+    padding: 16px 24px;
+  }
+  
+  .page-info {
+    font-size: 14px;
+  }
+  
+  .page-instructions {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .binder-cover {
+    width: 450px;
+    height: 562px;
+  }
+  
+  .binder-pages {
+    width: 450px;
+    height: 562px;
+  }
+  
+  .page-background {
+    padding: 30px;
+  }
+  
+  .card-grid {
+    gap: 5px;
+  }
+  
+  .logo-text {
+    font-size: 22px;
+  }
+  
+  .logo-subtitle {
+    font-size: 10px;
+  }
+  
+  .click-indicator {
+    font-size: 14px;
+  }
+  
+  .click-indicator svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .collection-stats h2 {
+    font-size: 20px;
+  }
+  
+  .stat-number {
+    font-size: 24px;
+  }
+  
+  .collection-title {
+    font-size: 18px;
+  }
+  
+  .stats-grid {
+    gap: 20px;
+  }
+  
+  .external-page-indicator {
+    padding: 12px 20px;
+  }
+  
+  .page-dots {
+    gap: 8px;
+  }
+  
+  .page-dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .page-info {
+    font-size: 13px;
+  }
+  
+  .page-instructions {
+    font-size: 10px;
+  }
+  
+  .page-turn-area {
+    width: 80px;
+  }
+}
